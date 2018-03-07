@@ -36,6 +36,19 @@ CMenderQtUpdater::~CMenderQtUpdater()
 }
 
 /**
+ * @brief CMenderQtUpdater::syncEnterState
+ * @return
+ */
+quint8 CMenderQtUpdater::syncEnterState()
+{
+    qDebug () << " mender: SyncEnter";
+
+    // TODO
+
+    return STATUS_OK;
+}
+
+/**
  * @brief CMenderQtUpdater::enableUpdate
  * @return
  */
@@ -45,7 +58,7 @@ quint8 CMenderQtUpdater::enableUpdate()
 
     // TODO
 
-    return DOWNLOAD_OK;
+    return STATUS_OK;
 }
 
 /**
@@ -58,7 +71,16 @@ quint8 CMenderQtUpdater::enableReboot()
 
     // TODO
 
-    return REBOOT_NOK;
+    return STATUS_OK;
+}
+
+quint8 CMenderQtUpdater::enableRollback()
+{
+    qDebug () << " mender: ArtifactCommit";
+
+    // TODO
+
+    return STATUS_OK;
 }
 
 

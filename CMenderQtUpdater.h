@@ -13,8 +13,9 @@
 #define SERVICE_NAME        "org.mender.updater"
 #define PROPERTY_PATH       "/"
 
-#define DOWNLOAD_OK         0
-#define REBOOT_NOK          1
+#define STATUS_OK       0
+#define STATUS_ERROR    1
+#define LATER           21
 
 class CMenderQtUpdater: public QObject
 {
@@ -23,8 +24,10 @@ public:
     CMenderQtUpdater();
     ~CMenderQtUpdater();
 
+    Q_INVOKABLE quint8 syncEnterState();
     Q_INVOKABLE quint8 enableUpdate();
     Q_INVOKABLE quint8 enableReboot();
+    Q_INVOKABLE quint8 enableRollback();
 
 protected:
 
